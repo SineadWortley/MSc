@@ -2,7 +2,7 @@ install.packages("usethis")
 library(usethis)
 install.packages("gitcreds")
 library(gitcreds)
-install.packages("curl")
+install.packages("curl", type = "binary")
 library(curl)
 usethis::use_git_config(
   user.name = "SineadWortley", 
@@ -13,3 +13,7 @@ gitcreds::gitcreds_set()
 
 usethis::use_git()
 usethis::use_github()
+
+
+lock_path <- file.path(Sys.getenv("R_LIBS_USER"), "00LOCK-curl")
+unlink(lock_path, recursive = TRUE, force = TRUE)
