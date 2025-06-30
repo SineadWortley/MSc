@@ -2,6 +2,8 @@ install.packages("usethis")
 library(usethis)
 install.packages("gitcreds")
 library(gitcreds)
+install.packages("curl")
+library(curl)
 usethis::use_git_config(
   user.name = "SineadWortley", 
   user.email = "u18122672@tuks.co.za"
